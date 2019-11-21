@@ -1,0 +1,126 @@
+/*estos estilos se le da a todo el documento por el * */
+*{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+.detalle{
+	position: absolute;
+	z-index: 1; /*es para poner las posiciones arriba*/
+	margin-top: 300px;
+	margin-left: 28%; /*se pondra 28% a la izquierda*/ 
+	font-size: 49px;
+	color: white; /*color de la letra*/
+	font-weight:bold;
+	font-family:"Comic Sans MS", cursive
+}
+
+figure img{
+	width: 100%; /*para que la imagen de fondo ocupe toda la pantalla (horizontal)*/
+	height: 700px;
+	margin-bottom: 25px;
+	background-repeat: no-repeat; /*este es para que no repita la imagen*/
+}
+
+h3{
+	text-align: center;
+	margin: 20px;
+	font-weight: bold; /*para que la letra sea en negrita*/
+}
+
+.articulo{
+	margin:10px;
+	padding: 40px;
+	background:#F4F2F2;
+	border-radius:70px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:22px;
+
+}
+
+nav{
+	position: absolute;
+	z-index: 1;
+	padding: 15px;
+}
+
+.nav-item{
+	display: inline-block; /* esto lo que hace es poner el menu en linea*/
+	margin-left: 70px; /*espaciado entre cada uno de los menu*/
+	font-size: 22px; /*tamaño de letra*/
+	margin-top: 40px; /*este es para espaciado ente lo de arriba y esto*/
+}
+
+.nav-link{
+	width: 110px;
+	text-decoration: none; /*para que no se vean ya el link subrayado*/
+	color: white; /*color del link*/
+	border-radius: 10px;
+	font-weight:bold;
+}
+
+.nav-link:hover{
+	border-bottom: 1px solid red; /*para que al pasar el cursor por los link despliega una linea verdesita*/
+}
+
+.bottom{
+border-bottom: 1px solid red; 
+}
+
+/*cuando la pagina vaya para abajo el menu tambien*/
+.shrink{
+	width: 100%; /*para que sea todo el ancho de la pantalla*/
+	transition: all ease-in-out 0.8s; /*cubre todo el menu y es de entrada y regreso cada 8 segundos*/
+	background:#353535;
+	position: fixed; /*para que sea posicion fija*/
+	opacity: 0.7;
+}
+
+/*cuando el menu vuelva hacia arriba tenga el mismo efecto*/
+.top{
+	width: 100%; /*para que sea todo el ancho de la pantalla*/
+	transition: all ease-in-out 0.8s; /*cubre todo el menu y es de entrada y regreso cada 8 segundos*/
+}
+
+input,label{
+	margin-left: 17%;
+	display: block; /*para que se ponga uno devajo del otro*/
+	width: 400px;
+	padding: 10px;
+	border-radius: 5px; /*para que redonde las puntas*/
+}
+
+/*formulario*/
+form{
+	overflow-x: hidden;/*para que se quite la barra de abajo*/
+	height: 300px;
+	background:#F4F2F2;
+	padding: 10px;
+	border-radius:70px;
+	margin:40px;
+}
+
+h2{
+	text-align: center;
+	color: red;
+	margin-bottom: 5px; 
+}
+
+.submit{
+	margin-top: 30px;
+	width: 1000px;
+	cursor: pointer; /*se le pone la manita al pasar por arriba*/
+	border-radius: 4px;
+	margin-bottom: 5px; /*para que tenga espaciado abajo*/
+}
+
+textarea{
+	margin-left: 55%;
+	display: block;
+	width: 400px;
+	padding: 60px;
+	margin-top: -225px;
+	border-radius: 5px;
+
+}

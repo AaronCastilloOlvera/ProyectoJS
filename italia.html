@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Italia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Shipment a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+                                Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+    <link rel="shorcut icon" href="images/Nube.png">
+</head>
+
+<body>
+   
+                    <div class="clearfix"></div>
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="logo text-left">
+                            <h1>
+                                <a class="navbar-brand" href="index.html">
+                            <img src="images/Logo_Aerolineas(Negro).png" width="200" height="200"></a>
+                            </h1>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-lg-auto text-right">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Inicio
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html"><font color="#000000">¿Quienes Somos?</font></a>
+                                </li>
+                               
+                                <li class="nav-item">
+                                    <a class="nav-link" href="price.php"><font color="#000000">Boletos</font></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html"><font color="#000000">Contactanos</font></a>
+                                </li>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="single.html"><font color="#000000">AcercaDe</font></a>
+                                </li>
+
+                            </ul>
+
+                            <div class="log-in">
+                                <a class="btn text-uppercase" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                                    Iniciar Sesion</a>
+                            </div>
+                        </div>
+
+                    </nav>
+                </header>
+            </div>
+        </div>
+
+    </div>
+    <!--//banner-->
+    <!-- /breadcrumb -->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="index.html">Inicio</a>
+        </li>
+        <li class="breadcrumb-item active">Italia</li>
+    </ol>
+    <br>
+   <center><img src="images/italia.jpg" width="800" height="200"></center>
+   
+   <center>
+
+<article class="articulo">
+        <script type="text/javascript">
+
+            numeroasientosseleccionados = 0;
+            numeroasientosporfila = 16;
+
+            //var Nombre = prompt("Nombre");
+
+            nombresdelasfilas = ['A','B','C','D'];
+
+            var statusPics = new Array();
+
+            statusPics['libre'] = new Image();
+
+            statusPics['seleccionado'] = new Image();
+
+            statusPics['ocupado'] = new Image();
+
+
+            // ASIGNAR LAS IMAGENES A LOS VALORES 
+            statusPics['libre'].src = 'images/asiento_lib.png';
+            statusPics['seleccionado'].src = 'images/asiento_sel.png';
+            statusPics['ocupado'].src = 'images/asiento_ocu.png';
+
+
+
+
+            function crearasientos(asientos,asientosfila,nombrefilas){
+
+                for(i=0; i < nombrefilas.length; i++){
+
+
+                    var filas = document.createElement('tr');
+                    var columnas = document.createElement('td');
+
+                    columnas.innerHTML = nombrefilas[i];
+
+                    filas.appendChild(columnas);
+
+                    for(j=0; j < asientosfila; j++){
+
+                        columnas = document.createElement('td');
+
+                        var imagenbutaca = document.createElement('img');
+
+                        imagenbutaca.src = statusPics['libre'].src;
+
+                        imagenbutaca.status = 'libre';
+
+                        imagenbutaca.onclick=function(){
+
+                            this.status = (this.status == 'libre')? 'seleccionado' : 'libre';
+
+                            this.src = (this.status == 'libre')? statusPics['libre'].src : statusPics['seleccionado'].src;
+
+                        }
+
+                        columnas.appendChild(imagenbutaca);
+
+                        filas.appendChild(columnas);
+
+                    }
+
+                    asientos.appendChild(filas);
+
+                }
+
+            }
+
+            
+
+            function confirmarsitios(){
+
+            
+
+                for(i=0; i < butacas.length; i++){
+
+                    if(butacas[i].status == 'seleccionado'){
+
+                        ++numeroasientosseleccionados;
+
+                        butacas[i].src=statusPics['ocupado'].src
+
+                    }
+
+                }
+                //Mensae final de confirmacion
+
+                alert(Nombre+"," + "ha comprado " +numeroasientosseleccionados + " boletos");
+
+            }
+
+            window.onload=function(){
+
+                butacascrear = document.getElementById('crear');
+
+                butacas = butacascrear.getElementsByTagName('img');
+
+                crearasientos(butacascrear,numeroasientosporfila,nombresdelasfilas);
+
+                document.getElementById('confirmar').onclick=confirmarsitios;
+
+                document.getElementById('resetear').onclick=function(){
+
+                    for(i=0; i < butacas.length; i++){
+
+                        butacas[i].src = statusPics['libre'].src;
+
+                        butacas[i].status = 'libre';
+
+                    }
+
+                }
+
+            }
+
+        </script>
+
+    </head>
+
+    <body background="images/sayagata-400px.png">
+
+        <div id="header"></div>
+
+        <div id="wrapper">
+
+            <div id="myTickets">
+
+                <h1><center><b> Aerolineas La Leche </b></center></h1>
+
+                <div id="myTicket">
+
+                    <h3><center><b> DESTINO: VENECIA, ITALIA</b></center></h3>
+
+                </div>
+            </div>
+
+            <div id="seating">
+                <table id="crear"></table>
+                    <div style="clear:both">
+            </div>
+
+                <br/>
+
+                <div id="buttons">
+
+                    <input   type = "button" value="Confirmar Asientos" id="confirmar" onclick="confirmarsitios()" style='background-color: #fa9535; width: :200px'>
+                    <input   type="submit" value="Siguiente" onclick = "location='pago.php'"style='background-color: #fa9535;width: :200px'/> 
+                    <input   type="reset" id="resetear" value="Borrar" style='background-color: #fa9535;width: :200px'/> 
+                    <input   type="submit" value="Regresar" onclick = "location='index.html'"style='background-color: #fa9535;width: :200px'>
+                    
+
+                    </div>
+                </div>
+            </div>
+        <br><br>
+    </body>
+</article>
+</center>
+   <footer class="newsletter_right_w3agile bg-dark pymd-5 py-4">
+        <div class="container">
+            <div class="inner-sec-w3layouts py-md-5 py-3">
+                <h3 class="tittle text-center mb-md-5 mb-4 text-white">Aerolineas la Leche</h3>
+                <div class="row footer-bottom-wthree mt-lg-5 mt-3">
+                    <div class="col-lg-6 copyright">
+                        <h2><a class="navbar-brand" href="index.html">
+                            <img src="images/Logo_Aerolineas(Claro).png" width="230" height="230"></a></h2>
+                        <p class="copy-right mt-3">© 2019 Derechos Reservados para Aerolineas la Leche
+                        </p>
+                    </div>
+                    <div class="col-lg-6 social-icon footer">
+                        <ul class="links-nav d-flex justify-content-end">
+                            <li>
+                                <a class="active" href="index.html">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="about.html">¿Quienes Somos?</a>
+                            </li>
+                            <li>
+                                <a href="price.php">Boletos</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contactanos</a>
+                            </li>
+                            <li>
+                                <a href="single.html">AcercaDe</a>
+                            </li>
+                        </ul>
+                        <ul class="social-icons d-flex justify-content-end mt-3">
+                            <li class="mr-1"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                            <li class="mx-1"><a href="#"><span class="fab fa-twitter"></span></a></li>
+                            <li class="mx-1"><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
+                            <li class="mx-1"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+        </script>
+    </body>
+</html>
